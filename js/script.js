@@ -82,8 +82,17 @@ thumbsContainer.innerHTML += thumbTemplate;
 //metto nelle variabili next e prev i due pulsanti
 const next = document.querySelector(" .fa-circle-chevron-down");
 const prev = document.querySelector(" .fa-circle-chevron-up");
+ const buttonPlay=document.querySelector('.container-play')
+ buttonPlay.addEventListener('click',()=>{
+  let interval = setInterval(slideDown,2000)
+  const buttonStop = document.querySelector('.container-stop');
+  buttonStop.addEventListener('click', stopInterval);
+  function stopInterval(){
+    clearInterval(interval);
+  }
+})
 //console.log(next, prev);
-setInterval(slideDown,3000);
+
 function slideDown() {
   //prendere immagine con currentIndexActive e togliere classe active
   const imgs = document.getElementsByClassName("item");
@@ -100,6 +109,7 @@ function slideDown() {
   imgs[currentIndexActive].classList.add("active");
   //console.log(currentIndexActive);
   thumbs[currentIndexActive].classList.add("active");
+
 }
 function slideUp() {
   const imgs = document.getElementsByClassName("item");
@@ -108,7 +118,7 @@ function slideUp() {
   thumbs[currentIndexActive].classList.remove("active");
   //console.log(imgs);
   if (currentIndexActive === 0) {
-    currentIndexActive = cardArray.length - 1;
+    currentIndexActive = cardArray.image.length - 1;
   } else {
     currentIndexActive--;
   }
