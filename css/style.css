@@ -75,3 +75,31 @@
 .prev {
   bottom: -20px;
 }
+.button-container{
+  width: 100%;
+  position: fixed;
+  bottom:60px;
+  display: flex;
+  justify-content: center;
+}
+.container-play, .container-stop{
+  width: 100px;
+  height: 100px;
+  border: 10px solid white;
+  color: white;
+  border-radius: 50%;
+  margin: 20px;
+  position: relative;
+  transition: all 0.2s linear;
+}
+.fas{
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container-play:hover, .container-stop:hover{
+  transform: scale(1.2);
+  opacity: 0.7;
+}
