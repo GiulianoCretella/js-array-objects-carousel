@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #001434;
 }
 
 #slider {
@@ -25,6 +25,7 @@
   height: 100%;
   position: relative;
   flex: 0, 1, 0;
+  border: 20px solid #001434;
 }
 .items-container {
   width: 70%;
@@ -49,7 +50,7 @@
   height: 20%;
 }
 .thumb.active {
-  border: 3px solid white;
+  border:7px solid #001434;;
 }
 .item img,
 .thumb img {
@@ -68,12 +69,13 @@
 #slider .fa-circle-chevron-down,
 #slider .fa-circle-chevron-up {
   cursor: pointer;
+  font-size: 40px;
 }
 .next {
-  top: -20px;
+  top: 20px;
 }
 .prev {
-  bottom: -20px;
+  bottom: 20px;
 }
 .button-container{
   width: 100%;
@@ -93,6 +95,7 @@
   margin: 20px;
   position: relative;
   transition: all 0.2s linear;
+  opacity: 0.7;
 }
 .fas{
   font-size: 40px;
@@ -103,7 +106,7 @@
 }
 .container-play:hover, .container-stop:hover{
   transform: scale(1.2);
-  opacity: 0.7;
+  opacity: 1;
 }
 .button-container:hover{
   opacity:1;

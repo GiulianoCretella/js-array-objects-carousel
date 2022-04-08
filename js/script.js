@@ -36,16 +36,10 @@ let cardArray=[
     text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   }
 ]
-//variabile per raccogliere tutto l'html che va in items-container
 let itemTemplate = "";
-
-//variabile per raccogliere tutto l'html che va in thumbs-container
 let thumbTemplate = "";
-
-// preparo una varibile con l'indice dell'elemento attivo e la pongo inizialmente a 0 ovvero il primo elemento dell'array
 let currentIndexActive = 0;
 
-//eseguo il ciclo for sull'array delle immagini (items) e popolo l'html delle due varibaili da stampare nei due contenitori (immagini e thumbnails)
 for (let i = 0; i < cardArray.length; i++) {
   let classActive = "";
   if (i === currentIndexActive) {
@@ -64,34 +58,25 @@ for (let i = 0; i < cardArray.length; i++) {
     <img src="${cardArray[i].image}" alt="" />
   </div>`;
 }
-//console.log(thumbTemplate);
 
-// metto in due variabili rispettivamente i contenitori che si trovano nell'html
 const itemsContainer = document.querySelector(".items-container");
 const thumbsContainer = document.querySelector(".thumbs-container");
-//console.log(itemContainer);
 
-//stampo l'html corrispondente nei due contenitori
 itemsContainer.innerHTML = itemTemplate;
 thumbsContainer.innerHTML += thumbTemplate;
-//document.querySelector(".item").classList.add("active");
 
-//Pulsanti
-//.next .fa-circle-chevron-down
-//.prev .fa-circle-chevron-up
-//metto nelle variabili next e prev i due pulsanti
 const next = document.querySelector(" .fa-circle-chevron-down");
 const prev = document.querySelector(" .fa-circle-chevron-up");
  const buttonPlay=document.querySelector('.container-play')
  buttonPlay.addEventListener('click',()=>{
-  let interval = setInterval(slideDown,2000)
+  let interval = setInterval(slideDown,3000)
   const buttonStop = document.querySelector('.container-stop');
   buttonStop.addEventListener('click', stopInterval);
   function stopInterval(){
     clearInterval(interval);
   }
 })
-//console.log(next, prev);
+
 
 function slideDown() {
   //prendere immagine con currentIndexActive e togliere classe active
@@ -107,6 +92,7 @@ function slideDown() {
   }
   //console.log(currentIndexActive);
   imgs[currentIndexActive].classList.add("active");
+  imgs[currentIndexActive].classList.add("w3-animate-fading")
   //console.log(currentIndexActive);
   thumbs[currentIndexActive].classList.add("active");
 
@@ -118,7 +104,7 @@ function slideUp() {
   thumbs[currentIndexActive].classList.remove("active");
   //console.log(imgs);
   if (currentIndexActive === 0) {
-    currentIndexActive = cardArray.image.length - 1;
+    currentIndexActive = cardArray.length - 1;
   } else {
     currentIndexActive--;
   }
