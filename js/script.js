@@ -70,11 +70,16 @@ const prev = document.querySelector(" .fa-circle-chevron-up");
  const buttonPlay=document.querySelector('.container-play')
  buttonPlay.addEventListener('click',()=>{
   let interval = setInterval(slideDown,3000)
+  console.log(interval)
   const buttonStop = document.querySelector('.container-stop');
   buttonStop.addEventListener('click', stopInterval);
   function stopInterval(){
     clearInterval(interval);
   }
+  if (interval > 1){
+    stopInterval()
+  }
+  console.log(interval)
 })
 
 
