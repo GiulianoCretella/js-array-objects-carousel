@@ -83,6 +83,7 @@ thumbsContainer.innerHTML += thumbTemplate;
 const next = document.querySelector(" .fa-circle-chevron-down");
 const prev = document.querySelector(" .fa-circle-chevron-up");
 //console.log(next, prev);
+setInterval(slideDown,3000);
 function slideDown() {
   //prendere immagine con currentIndexActive e togliere classe active
   const imgs = document.getElementsByClassName("item");
@@ -107,7 +108,7 @@ function slideUp() {
   thumbs[currentIndexActive].classList.remove("active");
   //console.log(imgs);
   if (currentIndexActive === 0) {
-    currentIndexActive = items.length - 1;
+    currentIndexActive = cardArray.length - 1;
   } else {
     currentIndexActive--;
   }
