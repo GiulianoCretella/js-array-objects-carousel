@@ -76,10 +76,6 @@ const prev = document.querySelector(" .fa-circle-chevron-up");
   function stopInterval(){
     clearInterval(interval);
   }
-  if (interval > 1){
-    stopInterval()
-  }
-  console.log(interval)
 })
 
 
